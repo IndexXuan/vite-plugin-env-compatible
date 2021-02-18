@@ -24,7 +24,7 @@ interface LoadOptions {
 }
 
 /**
- * 通过 dotenv & dotenv-expand 加载环境变量
+ * use dotenv & dotenv-expand
  */
 export function loadEnv(loadOptions: LoadOptions) {
   const { mode, root, prefix, ignoreProcessEnv } = loadOptions

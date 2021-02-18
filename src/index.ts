@@ -9,7 +9,7 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
     ...userOptions,
   }
   return {
-    name: 'zone:env-compatible',
+    name: 'env-compatible',
     enforce: 'pre',
     config(config) {
       const mode = config.mode
