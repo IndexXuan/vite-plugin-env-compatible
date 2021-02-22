@@ -9,16 +9,9 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
     ...userOptions,
   }
   return {
-    name: 'env-compatible',
+    name,
     enforce: 'pre',
-    config(config) {
-      const mode = config.mode
-      if (!mode) {
-        console.log(
-          `[$${name}]: mode is undefined, cannot auto load .env.*, please check your bin/vite_dev script for --mode`,
-        )
-        process.exit(1)
-      }
+    config(config, { mode }) {
       const root = config.root || process.cwd()
       const env = loadEnv({
         mode,
