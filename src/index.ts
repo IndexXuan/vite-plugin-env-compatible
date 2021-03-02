@@ -19,7 +19,7 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
         prefix: options.prefix || 'VUE_APP_',
         ignoreProcessEnv: options.ignoreProcessEnv || false,
       })
-      const myDefine: Record<string, string> = {}
+      const myDefine: Record<string, string | {}> = {}
       Object.keys(env).map(key => {
         const value = env[key]
 
@@ -35,6 +35,7 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
          * console.log(JSON.stringify(ret3).startsWith(`"`)) // true
          */
         myDefine[`${options.mountedPath}.${key}`] = JSON.stringify(value)
+        myDefine[`${options.mountedPath}`] = {}
       })
       config.define = {
         ...(config.define || {}),
