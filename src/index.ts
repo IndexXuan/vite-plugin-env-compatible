@@ -20,6 +20,9 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
         ignoreProcessEnv: options.ignoreProcessEnv || false,
       })
       const myDefine: Record<string, string | {}> = {}
+      if (options.mountedPath?.startsWith('process.env')) {
+        myDefine['process.env.VITE'] = JSON.stringify(true)
+      }
       Object.keys(env).map(key => {
         const value = env[key]
 
@@ -35,7 +38,6 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
          * console.log(JSON.stringify(ret3).startsWith(`"`)) // true
          */
         myDefine[`${options.mountedPath}.${key}`] = JSON.stringify(value)
-        myDefine[`${options.mountedPath}`] = {}
       })
       config.define = {
         ...(config.define || {}),
