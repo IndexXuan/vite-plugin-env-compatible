@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-env-compatible",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Environment Variables Compatible",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
