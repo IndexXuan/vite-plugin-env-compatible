@@ -17,7 +17,7 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
         mode,
         root,
         prefix: options.prefix || 'VUE_APP_',
-        ignoreProcessEnv: options.ignoreProcessEnv || false,
+        ignoreProcessEnv: options.ignoreProcessEnv ?? false,
       })
       const myDefine: Record<string, string | {}> = {}
       if (options.mountedPath?.startsWith('process.env')) {

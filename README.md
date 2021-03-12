@@ -46,3 +46,7 @@ export default defineConfig({
 ## Underlying
 - dotenv & dotenv-expand
 - [vite](https://github.com/vitejs/vite/blob/27785f7fcc5b45987b5f0bf308137ddbdd9f79ea/packages/vite/src/node/config.ts#L791)
+
+
+## Further
+- [vue-cli-plugin-vite](https://github.com/IndexXuan/vue-cli-plugin-vite)
