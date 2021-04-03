@@ -24,7 +24,7 @@
 
 ## Usage
 ```sh
-yarn add @nibfe/vite-plugin-env-compatible
+yarn add vite-plugin-env-compatible
 ```
 
 ```ts
