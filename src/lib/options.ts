@@ -1,5 +1,5 @@
 /**
- * Mock Plugin options.
+ * Env Plugin options.
  */
 
 export interface EnvOptions {
