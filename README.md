@@ -3,14 +3,15 @@
 > inject to process.env like vue-cli or create-react-app
 
 <p align="center">
+  <img alt="wakatime" src="https://wakatime.com/badge/github/IndexXuan/vite-plugin-env-compatible.svg" />
   <a href="https://github.com/IndexXuan/vite-plugin-env-compatible/actions/workflows/npm-publish.yml">
    <img alt="NPM Publish" src="https://github.com/IndexXuan/vite-plugin-env-compatible/actions/workflows/npm-publish.yml/badge.svg" style="max-width:100%;">
   </a>
   <a href="https://www.npmjs.com/package/vite-plugin-env-compatible" rel="nofollow">
-    <img alt="downloads" src="https://img.shields.io/npm/dt/vite-plugin-env-compatible.svg?style=flat-square">
+    <img alt="downloads" src="https://img.shields.io/npm/dt/vite-plugin-env-compatible.svg">
   </a>
   <a href="https://www.npmjs.com/package/vite-plugin-env-compatible" rel="nofollow">
-    <img alt="npm version" src="https://img.shields.io/npm/v/vite-plugin-env-compatible.svg?style=flat" style="max-width:100%;">
+    <img alt="npm version" src="https://img.shields.io/npm/v/vite-plugin-env-compatible.svg" style="max-width:100%;">
   </a>
   <a href="https://github.com/IndexXuan/vite-plugin-env-compatible/blob/main/LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" style="max-width:100%;">
