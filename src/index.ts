@@ -39,7 +39,12 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
          */
         myDefine[`${options.mountedPath}.${key}`] = JSON.stringify(value)
       })
+      /**
+       * @see {@link https://cli.vuejs.org/guide/html-and-static-assets.html#html}
+       * add the default env of Vue Cli
+       */
       config.define = {
+        'process.env.BASE_URL': "'/'",
         ...(config.define || {}),
         ...myDefine,
       }
