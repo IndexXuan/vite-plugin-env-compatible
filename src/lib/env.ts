@@ -79,3 +79,19 @@ export function loadEnv(loadOptions: LoadOptions) {
 
   return env
 }
+
+/**
+ * loadDynamicInjectedEnv.
+ *
+ * @param prefix - prefix of userland env var
+ */
+export function loadDynamicInjectedEnv(prefix: string) {
+  const env: Record<string, string> = {}
+  Object.keys(process.env).map((envKey: keyof typeof process.env) => {
+    if (String(envKey).includes(prefix)) {
+      env[envKey] = process.env[envKey] || ''
+    }
+  })
+
+  return env
+}
