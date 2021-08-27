@@ -18,7 +18,7 @@ function lookupFile(dir: string, formats: string[], pathOnly = false): string | 
 
 interface LoadOptions {
   mode: string
-  root: string
+  envDir: string
   prefix: string
   ignoreProcessEnv: boolean
 }
@@ -27,7 +27,7 @@ interface LoadOptions {
  * use dotenv & dotenv-expand
  */
 export function loadEnv(loadOptions: LoadOptions) {
-  const { mode, root, prefix, ignoreProcessEnv } = loadOptions
+  const { mode, envDir, prefix, ignoreProcessEnv } = loadOptions
   if (mode === 'local') {
     throw new Error(
       `"local" cannot be used as a mode name because it conflicts with ` +
@@ -52,7 +52,7 @@ export function loadEnv(loadOptions: LoadOptions) {
   }
 
   for (const file of envFiles) {
-    const path = lookupFile(root, [file], true)
+    const path = lookupFile(envDir, [file], true)
     if (path) {
       const parsed = dotenv.parse(fs.readFileSync(path), {
         debug: !!process.env.DEBUG || undefined,
