@@ -18,13 +18,14 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
       if (!path.isAbsolute(envDir || '')) {
         envDir = path.join(root, envDir)
       }
+      const prefix = typeof options.prefix === 'undefined' ? 'VUE_APP_' : options.prefix
       const env = loadEnv({
         mode,
         envDir,
-        prefix: options.prefix || 'VUE_APP_',
+        prefix,
         ignoreProcessEnv: options.ignoreProcessEnv ?? false,
       })
-      const dynamicInjectedEnv = loadDynamicInjectedEnv(options.prefix || 'VUE_APP_')
+      const dynamicInjectedEnv = loadDynamicInjectedEnv(prefix)
       const myDefine: Record<string, string> = {}
       if (options.mountedPath?.startsWith('process.env')) {
         myDefine['process.env.VITE'] = JSON.stringify(true)
