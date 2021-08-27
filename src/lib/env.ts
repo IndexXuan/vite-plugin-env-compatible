@@ -43,7 +43,7 @@ export function loadEnv(loadOptions: LoadOptions) {
     /** default file */ `.env`,
   ]
 
-  // check if there are actual env variables starting with VITE_*
+  // check if there are actual env variables starting with prefix
   // these are typically provided inline and should be prioritized
   for (const key in process.env) {
     if (key.startsWith(prefix) && env[key] === undefined) {

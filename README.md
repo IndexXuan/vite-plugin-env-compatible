@@ -30,13 +30,13 @@ yarn add vite-plugin-env-compatible
 
 ```ts
 // vite.config.ts
-import envCompatible from 'vite-plugin-env-compatible'
+import env from 'vite-plugin-env-compatible'
 
 // @see https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     // ...other plugins
-    envCompatible(/* options */)
+    env(/* options */)
   ],
 })
 ```
