@@ -30,7 +30,7 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
       if (options.mountedPath?.startsWith('process.env')) {
         myDefine['process.env.VITE'] = JSON.stringify(true)
       }
-      Object.keys({ ...env, ...dynamicInjectedEnv }).map(key => {
+      Object.keys({ ...env, ...dynamicInjectedEnv }).map((key) => {
         const value = env[key]
 
         /**
