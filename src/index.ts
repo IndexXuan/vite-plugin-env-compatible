@@ -2,6 +2,7 @@ import type { Plugin } from 'vite'
 import type { UserOptions } from './lib/options'
 import { loadEnv, loadDynamicInjectedEnv } from './lib/env'
 import { name } from '../package.json'
+import path from 'path'
 
 export default function envCompatible(userOptions: UserOptions = {}): Plugin {
   const options: UserOptions = {
@@ -13,13 +14,18 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
     enforce: 'pre',
     config(config, { mode }) {
       const root = config.root || process.cwd()
+      let envDir = config.envDir || './'
+      if (!path.isAbsolute(envDir || '')) {
+        envDir = path.join(root, envDir)
+      }
+      const prefix = typeof options.prefix === 'undefined' ? 'VUE_APP_' : options.prefix
       const env = loadEnv({
         mode,
-        root,
-        prefix: options.prefix || 'VUE_APP_',
+        envDir,
+        prefix,
         ignoreProcessEnv: options.ignoreProcessEnv ?? false,
       })
-      const dynamicInjectedEnv = loadDynamicInjectedEnv(options.prefix || 'VUE_APP_')
+      const dynamicInjectedEnv = loadDynamicInjectedEnv(prefix)
       const myDefine: Record<string, string> = {}
       if (options.mountedPath?.startsWith('process.env')) {
         myDefine['process.env.VITE'] = JSON.stringify(true)
