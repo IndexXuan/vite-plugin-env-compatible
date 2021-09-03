@@ -1,6 +1,6 @@
 # vite-plugin-env-compatible
 
-> inject to process.env like vue-cli or create-react-app
+> inject to process.env like vue-cli or create-react-app and also define client `process.env.XXX` for you.
 
 <p align="center">
   <img alt="wakatime" src="https://wakatime.com/badge/github/IndexXuan/vite-plugin-env-compatible.svg" />
@@ -19,9 +19,9 @@
 </p>
 
 ## Motivation
-- `vite` expose `VITE_XXX` to `import.meta.env.VITE_XXX`, but not loaded to process.env like vue-cli or create-react-app
-- this plugin support setting prefix like `VUE_APP_` or `REACT_APP_` and loaded to process.env
-- just for compatibility
+- `vite` expose env to `import.meta.env.PREFIX_XXX`, but not loaded to process.env like vue-cli or create-react-app.
+- ~~this plugin support setting prefix like `VUE_APP_` or `REACT_APP_` and loaded to process.env~~(support by vite@2.5.1).
+- built-in with [vue-cli-plugin-vite](https://github.com/IndexXuan/vue-cli-plugin-vite) just for compatibility.
 
 ## Usage
 ```sh
