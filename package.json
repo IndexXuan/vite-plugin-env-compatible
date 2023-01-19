@@ -32,7 +32,7 @@
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "lint-staged": "10.5.4",
-    "prettier": "2.2.1",
+    "prettier": "^2.8.3",
     "tsup": "^6.5.0",
     "typescript": "^4.9.4",
     "vite": "^4.0.4",
@@ -47,7 +47,7 @@
     "jsxSingleQuote": false,
     "trailingComma": "all",
     "bracketSpacing": true,
-    "jsxBracketSameLine": false,
+    "bracketSameLine": false,
     "arrowParens": "always"
   },
   "config": {
