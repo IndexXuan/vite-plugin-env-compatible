@@ -4,7 +4,7 @@ import { loadEnv, loadDynamicInjectedEnv } from './lib/env'
 import { name } from '../package.json'
 import path from 'path'
 
-export default function envCompatible(userOptions: UserOptions = {}): Plugin {
+export function envCompatible(userOptions: UserOptions = {}): Plugin {
   const options: UserOptions = {
     mountedPath: 'process.env',
     ...userOptions,
@@ -55,3 +55,4 @@ export default function envCompatible(userOptions: UserOptions = {}): Plugin {
 }
 
 export type { UserOptions as EnvCompatibleOptions }
+export default envCompatible
