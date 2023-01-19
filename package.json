@@ -10,7 +10,8 @@
   ],
   "author": "indexxuan@gmail.com",
   "scripts": {
-    "build": "tsup src/index.ts --dts",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "lint": "prettier --write --parser typescript \"src/**/*.ts\"",
     "prepublishOnly": "npm run build"
   },
