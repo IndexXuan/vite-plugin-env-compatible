@@ -18,6 +18,12 @@
   </a>
 </p>
 
+## Alternative
+This repo does not get updated as often as I would prefer.  I hope you find it helpful, but if for whatever reason you do not a possible alternative is [vite-plugin-node-stdlib-browser](https://github.com/sodatea/vite-plugin-node-stdlib-browser).  A vite plugin with:
+- fewer options
+- similar functionality
+- more frequent updates
+
 ## Motivation
 - `vite` expose env to `import.meta.env.PREFIX_XXX`, but not loaded to process.env like vue-cli or create-react-app.
 - ~~this plugin support setting prefix like `VUE_APP_` or `REACT_APP_` and loaded to process.env~~(support by vite@2.5.1).
