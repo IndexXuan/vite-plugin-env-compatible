@@ -33,6 +33,10 @@ This repo does not get updated as often as I would prefer.  I hope you find it h
 ```sh
 yarn add vite-plugin-env-compatible
 ```
+or
+```sh
+pnpm add --save-dev vite-plugin-env-compatible
+```
 
 ```ts
 // vite.config.ts
