@@ -7,7 +7,7 @@ export default defineConfig({
   clean: true,
   dts: true,
   skipNodeModulesBundle: true,
-  format: ["esm","cjs","iife"],
+  format: ['cjs'],
   esbuildOptions: (options) => {
     options.footer = {
       // This will ensure we can continue writing this plugin
