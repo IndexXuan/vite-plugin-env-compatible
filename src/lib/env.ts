@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import dotenv from 'dotenv'
-import dotenvExpand from 'dotenv-expand'
+import { expand } from 'dotenv-expand'
 
 function lookupFile(dir: string, formats: string[], pathOnly = false): string | undefined {
   for (const format of formats) {
@@ -54,12 +54,10 @@ export function loadEnv(loadOptions: LoadOptions) {
   for (const file of envFiles) {
     const path = lookupFile(envDir, [file], true)
     if (path) {
-      const parsed = dotenv.parse(fs.readFileSync(path), {
-        debug: !!process.env.DEBUG || undefined,
-      })
+      const parsed = dotenv.parse(fs.readFileSync(path))
 
       // let environment variables use each other
-      dotenvExpand({
+      expand({
         parsed,
         // prevent process.env mutation
         ignoreProcessEnv,
