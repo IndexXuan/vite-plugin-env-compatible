@@ -24,7 +24,7 @@
   "homepage": "https://github.com/IndexXuan/vite-plugin-env-compatible",
   "repository": {
     "type": "git",
-    "url": "git@github.com:IndexXuan/vite-plugin-env-compatible.git"
+    "url": "git+https://github.com/IndexXuan/vite-plugin-env-compatible.git"
   },
   "keywords": [
     "vite-plugin",
